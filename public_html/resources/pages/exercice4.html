@@ -35,51 +35,66 @@
                 </li>
             </ul>
             <br/>
+                <input style="margin-left : 40%" type="button" id="calculatrice" value="n'importe quoi dedans" onclick="calcul()"/>
 
-            <input style="margin-left : 40%" type="button" id="calculatrice" value="Utiliser la calculatrice" onclick="calcule()"/>
-
-        </div>
+       </div>   
         <script>
-            function calcule() {
+            debugger;
+            function calcul() {
             //Saisie du premier nombre
-            var nb1 = alert('Saisissez un premier nombre.');
-            if (nb1) {
-            nb1 = alert('Vous n\'avez pas saisi un nombre. Veuillez resaisir un premier nombre.');
-            }
-
+         
+           var nb1 = prompt('Saisissez un premier nombre.', ' ');
+            nb1 = parseInt(nb1);   
+        
+         while(isNaN(nb1))   {
+             alert('Vous n\'avez pas saisi un nombre. Veuillez resaisir un premier nombre.');
+         }
+         
             //Saisie du second nombre
-            var nb2 = alert('Saisissez un second nombre.');
-            if (nb2) {
-                nb2 = alert('Vous n\'avez pas saisi un nombre. Veuillez resaisir un second nombre.');
-                nb2 = parse(nb2);
+            var nb2 = prompt('Saisissez un second nombre.', " ");
+                 nb2 = parseInt(nb2);
+                
+           while(isNaN(nb2)){
+                alert('Vous n\'avez pas saisi un nombre. Veuillez resaisir un second nombre.');
             }
-
+          
+             
+       
+                
             //Addition des nombres ou pas
-            if (alert('Voulez-vous additionner les nombres et ' + nb2 + ' ?') {
-                var res = nb1 * nb2;
-                'Le résultat de ' + nb1 + ' + ' + nb2 + ' est ' + res + '.';
-            }
+            if (confirm('Voulez-vous additionner les nombres '+ nb1 + 'et' + nb2 +'?')){
+                 res = nb1 + nb2;
+                alert('Le résultat de ' + nb1 + ' + ' + nb2 + ' est ' + res + '.');
+            } 
+            
+      
             //Soustraction des nombres ou pas
-            elsif ('Voulez-vous soustraire les nombres ' + nb1 + ' et ' + nb2 + ' ?') {
-                var res = nb1 - nb2;
+            else if (confirm('Voulez-vous soustraire les nombres ' + nb1 + ' et ' + nb2 + ' ?')){
+                res = nb1 - nb2;
                 alert('Le résultat de ' + nb1 + ' - ' + nb2 + ' est ' + res + '.');
             }
             //Multiplication des nombres ou pas 
-            elsif ('Voulez-vous multiplier les nombres ' + nb1 + ' et ' + nb2 + ' ?') {
-                var res = nb1 * nb2;
-                'Le résultat de ' + nb1 + ' * ' + nb2 + ' est ' + res + '.';
+            else if (confirm('Voulez-vous multiplier les nombres ' + nb1 + ' et ' + nb2 + ' ?')) {
+                 res = nb1 * nb2;
+                alert('Le résultat de ' + nb1 + ' * ' + nb2 + ' est ' + res + '.');
             }
             //Division des nombres ou pas
-            else if ('Voulez-vous diviser le nombre ' + nb1 + ' par ' + nb2 + ' ?') {
-                nb2 = prompt('Le nombre par lequel vous souhaitez diviser est égal à 0. Veuillez resaisir un nombre différent de 0.');
-                var res = nb1 / nb2;
-                'Le résultat de ' + nb1 + ' par ' + nb2 + ' est ' + res + '.';
+            else if (confirm('Voulez-vous diviser le nombre ' + nb1 + ' par ' + nb2 + ' ?')) {
+                 res = nb1 / nb2;
+                 
+            while(nb2 == 0){
+                     
+                 nb2 = prompt('Le nombre par lequel vous souhaitez diviser est égal à 0. Veuillez resaisir un nombre différent de 0.');
+             }
+                alert('Le résultat de ' + nb1 + ' par ' + nb2 + ' est ' + res + '.');
+                
             }
             //Abandon
             else {
             alert('Vous n\'avez rien demandé de faire.');
             }
-        </scpt>
+        }
+       </script>
         <script src="../js/classie.js"></script>
         <script src="../js/gnmenu.js"></script>
         <script>
