@@ -30,7 +30,7 @@
                 <span style="margin-left:20px;">Dites-moi quel âge vous avez</span><br/>
                 <span style="margin-left:20px;">et je vous dirai qui vous êtes.</span><br/> 
                 <br/>
-                <input id="age" style="margin-left:20px;" type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' onChange="giveFeature(value)" value=""></input>
+                <input id="age" style="margin-left:20px;" type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' onChange="giveFeature(value)" value="" onclick="giveFeature()"></input>
                 <br/>
                 <br/>
                 <div id="resultat"></div>
@@ -39,16 +39,32 @@
         <img id="deMorgan" src="../img/tableau-produit-logique.png" style="width:100%;">
         <script type="text/javascript">
             "use strict";
-            var generateDepartmentList = new Array("Ain", "Aisne", "Allier", "Alpes-de-Haute-Provence", "Alpes-Maritimes", "Ardèche", "Ardennes", "Ariège", "Aube", "Aude", "Aveyron", "Bas-Rhin", "Bouches-du-Rhône", "Calvados", "Cantal", "Charente", "Charente-Maritime", "Cher", "Corrèze", "Corse-du-Sud", "Côte-d'Or", "Côtes-d'Armor", "Creuse", "Deux-Sèvres", "Dordogne", "Doubs", "Drôme", "Essonne", "Eure", "Eure-et-Loir", "Finistère", "Gard", "Gers", "Gironde", "Guadeloupe", "Guyane", "Haut-Rhin", "Haute-Corse", "Haute-Garonne", "Haute-Loire", "Haute-Marne", "Haute-Saône", "Haute-Savoie", "Haute-Vienne", "Hautes-Alpes", "Hautes-Pyrénées", "Hauts-de-Seine", "Hérault", "Ille-et-Vilaine", "Indre", "Indre-et-Loire", "Isère", "Jura", "La Réunion", "Landes", "Loir-et-Cher", "Loire", "Loire-Atlantique", "Loiret", "Lot", "Lot-et-Garonne", "Lozère", "Maine-et-Loire", "Manche", "Marne", "Martinique", "Mayenne", "Mayotte", "Meurthe-et-Moselle", "Meuse", "Morbihan", "Moselle", "Nièvre", "Nord", "Oise", "Orne", "Paris", "Pas-de-Calais", "Puy-de-Dôme", "Pyrénées-Atlantiques", "Pyrénées-Orientales", "Rhône", "Saône-et-Loire", "Sarthe", "Savoie", "Seine-et-Marne", "Seine-Maritime", "Seine-Saint-Denis", "Somme", "Tarn", "Tarn-et-Garonne", "Territoire de Belfort", "Val-d'Oise", "Val-de-Marne", "Var", "Vaucluse", "Vendée", "Vienne", "Vosges", "Yonne", "Yvelines");
-            var d = document.departmentListForm.departmentList;
-            for (var i = 0; i < generateDepartmentList.length; i++)
-            {
-                d.length++;
-                d.options[d.length - 1].text = generateDepartmentList[i];
+          
+           
 
-            }
 
             function giveFeature(age) {
+               var age="";
+                
+                if (age>=0 && age<=1){
+                    alert('Vous êtes un bébé');
+                }
+                else if (age>1 && age<=6){
+                    alert('Vous êtes un jeune enfant.');
+                }
+                else if (age>=7 && age<=11){
+                    alert('Vous êtes un enfant qui a atteint l\'âge de raison.');
+                }
+                else if (age>=12 && age<=17){
+                    alert('Vous êtes un adolescent.');
+                }
+                else if (age>17 && age>55){
+                    alert('Vous êtes un jeune adulte.');
+                }
+                else if (age>55 && age>1000){
+                    alert('Vous êtes un sénior.');
+                }
+            }
                 /* Indiquez par le biais d'alert ou d'un champ HTML la description qui correspond à l'âge saisi
                  * 0 à 1 compris : Vous êtes un bébé.
                  * 1 à 6 ans compris : Vous êtes un jeune enfant.
