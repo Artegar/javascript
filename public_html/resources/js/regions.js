@@ -6,46 +6,47 @@ for (var i = 0; i < generateDepartmentList.length; i++)
 {
     d.length++;
     d.options[d.length - 1].text = generateDepartmentList[i];
+    
 }
-        
+   /*     
 function get(department){
     var region = "";
     var error = null;
     
-    if (){
+    if ( Alsace-Champagne-Ardenne-Lorraine){
         
     }
-    else if (){
+    else if (Aquitaine-Limousin-Poitou-Charentes){
         
     }
-    else if (){
+    else if (Auvergne-Rhône-Alpes){
         
     }
-    else if (){
+    else if (Bretagne){
         
     }
-    else if (){
+    else if (Centre-Val de Loire){
     
     }
-    else if (){
+    else if (Corse){
     
     }
-    else if (){
+    else if (Île-de-France){
     
     }
-    else if (){
+    else if (Languedoc-Roussillon-Midi-Pyrénées){
     
     }
-    else if (){
+    else if (Nord-Pas-de-Calais-Picardie){
     
     }
-    else if (){
+    else if (Normandie){
     
     }
-    else if (){
+    else if (region ='Pays de la Loire'){
     
     }
-    else if (){
+    else if (Provence-Alpes-Côte d'Azur){
     
     }
     else if (){
@@ -56,7 +57,7 @@ function get(department){
     }
     else {
         error;
-    }
+    }*/
 
     var resultOK = "Vous résidez dans la région " + region + ".";
         ?  document.getElementById("resultat").innerHTML = resultOK: error;
