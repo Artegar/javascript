@@ -35,11 +35,11 @@
                 </li>
             </ul>
             <br/>
+                <input style="margin-left : 40%" type="button" id="calculatrice" value="n'importe quoi dedans" onclick="calcul()"/>
 
-            <input style="margin-left : 40%" type="button" id="calculatrice" value="Utiliser la calculatrice" onclick="calcule()"/>
-
-        </div>
+       </div>   
         <script>
+<<<<<<< HEAD
             function calcule() {
                 //Saisie du premier nombre
                 var nb1 = prompt('Saisissez un premier nombre.');
@@ -118,6 +118,64 @@
                 }
             }
         </script>
+=======
+            debugger;
+            function calcul() {
+            //Saisie du premier nombre
+         
+           var nb1 = prompt('Saisissez un premier nombre.', ' ');
+            nb1 = parseInt(nb1);   
+        
+         while(isNaN(nb1))   {
+             alert('Vous n\'avez pas saisi un nombre. Veuillez resaisir un premier nombre.');
+         }
+         
+            //Saisie du second nombre
+            var nb2 = prompt('Saisissez un second nombre.', " ");
+                 nb2 = parseInt(nb2);
+                
+           while(isNaN(nb2)){
+                alert('Vous n\'avez pas saisi un nombre. Veuillez resaisir un second nombre.');
+            }
+          
+             
+       
+                
+            //Addition des nombres ou pas
+            if (confirm('Voulez-vous additionner les nombres '+ nb1 + 'et' + nb2 +'?')){
+                 res = nb1 + nb2;
+                alert('Le résultat de ' + nb1 + ' + ' + nb2 + ' est ' + res + '.');
+            } 
+            
+      
+            //Soustraction des nombres ou pas
+            else if (confirm('Voulez-vous soustraire les nombres ' + nb1 + ' et ' + nb2 + ' ?')){
+                res = nb1 - nb2;
+                alert('Le résultat de ' + nb1 + ' - ' + nb2 + ' est ' + res + '.');
+            }
+            //Multiplication des nombres ou pas 
+            else if (confirm('Voulez-vous multiplier les nombres ' + nb1 + ' et ' + nb2 + ' ?')) {
+                 res = nb1 * nb2;
+                alert('Le résultat de ' + nb1 + ' * ' + nb2 + ' est ' + res + '.');
+            }
+            //Division des nombres ou pas
+            else if (confirm('Voulez-vous diviser le nombre ' + nb1 + ' par ' + nb2 + ' ?')) {
+                 res = nb1 / nb2;
+                 
+            while(nb2 == 0){
+                     
+                 nb2 = prompt('Le nombre par lequel vous souhaitez diviser est égal à 0. Veuillez resaisir un nombre différent de 0.');
+             }
+                alert('Le résultat de ' + nb1 + ' par ' + nb2 + ' est ' + res + '.');
+                
+            }
+            //Abandon
+            else {
+            alert('Vous n\'avez rien demandé de faire.');
+            }
+        }
+       </script>
+>>>>>>> origin/exo45
         <script src="../js/classie.js"></script>
         <script src="../js/gnmenu.js"></script>
         <script>
